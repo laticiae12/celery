@@ -1,21 +1,27 @@
 ## Question
 
-You must analyze how Celery async task flow works.
+You are required to analyze how Celery async task flow works.
 
-Steps:
-1. Read relevant files from the Celery codebase
-2. Understand how tasks move through the system
+You MUST:
+1. Read relevant Celery source files
+2. Understand how tasks move through:
+   - task creation
+   - broker/queue
+   - worker execution
 
-IMPORTANT:
-You MUST output a JSON object with EXACTLY this format:
+FINAL OUTPUT REQUIREMENT (CRITICAL):
+
+You MUST return ONLY valid JSON in this exact format:
 
 {
-  "final_answer": "Your explanation here",
+  "final_answer": "A clear explanation of how Celery async tasks flow from task → broker → queue → worker → execution",
   "unique_files_read": ["file1", "file2"]
 }
 
 Rules:
-- final_answer must be a detailed explanation
-- It MUST include these words: task, worker, queue, broker
-- unique_files_read must list real files you accessed
-- Do NOT output anything outside this JSON
+- DO NOT print anything before or after the JSON
+- final_answer MUST include these words:
+  "task", "worker", "queue", "broker"
+- unique_files_read must include actual file paths you opened
+- final_answer must NOT be empty
+- If you fail to output JSON, the task is incorrect
