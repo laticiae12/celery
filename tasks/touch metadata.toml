@@ -1,0 +1,6 @@
+[environment]
+repo = "celery/celery"
+commit = "main"
+
+[task]
+category = "repo_navigation"
