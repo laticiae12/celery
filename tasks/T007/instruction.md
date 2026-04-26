@@ -4,16 +4,16 @@ You must analyze how Celery async task flow works.
 
 Read relevant Celery source files and understand how a task moves through the system.
 
-At the end, you MUST output ONLY this JSON:
+At the end, output ONLY valid JSON in this format:
 
 {
-  "final_answer": "Explain clearly how a task flows through Celery including task creation, broker, queue, worker, and execution.",
-  "unique_files_read": ["list of actual files you opened"]
+  "final_answer": "A clear explanation of how a Celery task flows through task creation, broker, queue, worker, and execution.",
+  "unique_files_read": ["list real file paths you actually opened"]
 }
 
-STRICT RULES:
-- Output ONLY JSON (no explanations, no extra text)
-- final_answer must include: task, worker, queue, broker
-- final_answer must NOT be empty
-- unique_files_read must contain real file paths from your reads
-- If you output anything outside JSON, the answer is WRONG
+Rules:
+- DO NOT output anything except JSON
+- DO NOT include explanations outside JSON
+- final_answer MUST include the words: task, worker, queue, broker
+- final_answer MUST NOT be empty
+- unique_files_read MUST NOT be empty
