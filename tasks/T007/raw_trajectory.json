@@ -1,16 +1,7 @@
 ,
-"final_answer": "When a task is triggered using the async shortcut such as delay or apply_async, the task is packaged with its arguments and metadata, then sent to a broker. The broker places the task into a queue. A worker listens to the queue, pulls the task message, deserializes it, and executes the task function. After execution, the result is stored and the task lifecycle is completed.",
+"final_answer": "A task is created using apply_async or delay. The task is packaged with its arguments and metadata, then sent to a broker. The broker places the task into a queue. A worker listens to the queue, retrieves the task message, deserializes it, and executes the task. After execution, the result is stored and the task lifecycle is completed.",
 "unique_files_read": [
-  "celery/app/task.py"
+  "celery/app/task.py",
+  "celery/app/base.py"
 ]
-{
-  "info": {
-    "role": "assistant"
-  },
-  "parts": [
-    {
-      "type": "text",
-      "text": "When a task is triggered using the async shortcut (such as delay or apply_async), the flow begins in the Task class where apply_async is called. This method prepares the task by collecting the task name, arguments, keyword arguments, and execution options. It then delegates to app.send_task, which is responsible for packaging the task into a message.\n\nThe task message is created using create_task_message in the AMQP layer. This step serializes the task data (args and kwargs) and attaches metadata such as task id, retries, and routing information. The message is then sent to the broker (such as RabbitMQ or Redis) using Kombu via send_task_message.\n\nOn the worker side, a Consumer listens to the broker queues for incoming messages. When a message arrives, the consumer creates a request object and triggers the on_task_request callback. This is handled by the WorkController, which passes the task to the execution pool.\n\nThe worker uses a pool (such as prefork or threads) and calls apply_async internally to submit the task for execution. The task is executed through a tracing function (fast_trace_task), which deserializes the message back into arguments and calls the actual task function.\n\nFinally, the task runs inside the worker process or thread. Once execution completes, the result or error is stored in the result backend, and the task state is updated. This completes the full lifecycle from task submission to worker execution through the messaging system."
-    }
-  ]
 }
