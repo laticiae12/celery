@@ -1,3 +1,8 @@
+,
+"final_answer": "When a task is triggered using the async shortcut such as delay or apply_async, the task is packaged with its arguments and metadata, then sent to a broker. The broker places the task into a queue. A worker listens to the queue, pulls the task message, deserializes it, and executes the task function. After execution, the result is stored and the task lifecycle is completed.",
+"unique_files_read": [
+  "celery/app/task.py"
+]
 {
   "info": {
     "role": "assistant"
