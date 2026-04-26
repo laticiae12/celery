@@ -5,3 +5,10 @@
   "celery/app/base.py"
 ]
 }
+{
+  "info": {...},
+  "messages": [...],
+
+  "final_answer": "...",
+  "unique_files_read": [...]
+}
