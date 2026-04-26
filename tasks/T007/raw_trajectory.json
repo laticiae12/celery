@@ -1,5 +1,5 @@
 ,
-"final_answer": "A task is created using apply_async or delay. The task is packaged with its arguments and metadata, then sent to a broker. The broker places the task into a queue. A worker listens to the queue, retrieves the task message, deserializes it, and executes the task. After execution, the result is stored and the task lifecycle is completed.",
+"final_answer": "A task is created using apply_async or delay. The task is packaged with its arguments and metadata, sent to a broker, placed into a queue, then picked up by a worker. The worker processes the queue, deserializes the task, executes it, and stores the result after completion.",
 "unique_files_read": [
   "celery/app/task.py",
   "celery/app/base.py"
