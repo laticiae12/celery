@@ -4,6 +4,31 @@
       "name": "Correct explanation of task flow",
       "weight": 3,
       "type": "binary",
+      "description": "Answer correctly explains how tasks move from producer to worker.",
+      "evidence": "celery/app/task.py, kombu/messaging.py"
+    },
+    {
+      "name": "Mentions worker execution",
+      "weight": 3,
+      "type": "binary",
+      "description": "Answer includes how workers consume and execute tasks.",
+      "evidence": "celery/worker/consumer/consumer.py"
+    },
+    {
+      "name": "Clarity",
+      "weight": 1,
+      "type": "scale",
+      "description": "Answer is clear and logically structured.",
+      "evidence": "final answer text"
+    }
+  ]
+},
+"final_answer": "A task is created using apply_async or delay. The task is packaged with its arguments and metadata, sent to a broker, placed into a queue, then picked up by a worker. The worker processes the queue, deserializes the task, executes it, and stores the result after completion.",
+"unique_files_read": [
+  "celery/app/task.py",
+  "celery/app/base.py"
+]
+}
       "description": "Explains how a task moves from producer to worker execution",
       "evidence": "Celery messaging flow (producer -> broker -> worker)"
     },
