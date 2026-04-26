@@ -3686,3 +3686,17 @@
     "celery/app/base.py"
   ]
 }
+,
+"final_answer": "A task is created using apply_async or delay. The task is packaged with its arguments and metadata, sent to a broker, placed into a queue, then picked up by a worker. The worker processes the queue, deserializes the task, executes it, and stores the result after completion.",
+"unique_files_read": [
+  "celery/app/task.py",
+  "celery/app/base.py"
+]
+}
+{
+  "info": {...},
+  "messages": [...],
+
+  "final_answer": "...",
+  "unique_files_read": [...]
+}

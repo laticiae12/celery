@@ -29,3 +29,29 @@
   "celery/app/base.py"
 ]
 }
+      "description": "Explains how a task moves from producer to worker execution",
+      "evidence": "Celery messaging flow (producer -> broker -> worker)"
+    },
+    {
+      "name": "Mentions worker role",
+      "weight": 3,
+      "type": "binary",
+      "description": "Correctly identifies that workers execute tasks",
+      "evidence": "Worker consumes and executes tasks"
+    },
+    {
+      "name": "Mentions broker or queue",
+      "weight": 1,
+      "type": "binary",
+      "description": "Includes broker/queue in explanation",
+      "evidence": "Broker handles message routing"
+    },
+    {
+      "name": "Clarity and coherence",
+      "weight": 1,
+      "type": "scale",
+      "description": "Answer is understandable and logically structured",
+      "evidence": "Readable explanation"
+    }
+  ]
+}
