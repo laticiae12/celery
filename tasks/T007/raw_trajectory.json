@@ -19,10 +19,9 @@
       "action": "allow"
     }
   ],
-"unique_files_read": [
-  "celery/worker/consumer/consumer.py",
-  "celery/app/task.py"
-  ]
-  "final_answer": "In Celery, a task is sent to a queue, where a worker 
-retrieves it and executes it using a broker to handle message passing."
+  "unique_files_read": [
+    "celery/worker/consumer/consumer.py",
+    "celery/app/task.py"
+  ],
+  "final_answer": "In Celery, a task is sent to a queue where a worker retrieves it and executes it using a broker to handle message passing."
 }
