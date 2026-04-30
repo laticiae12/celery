@@ -1,0 +1,5 @@
+[
+  "celery/app/base.py",
+  "celery/app/amqp.py",
+  "celery/worker/consumer/consumer.py"
+]
